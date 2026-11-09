@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'charityapp',
     "django.contrib.sites",
-    'django_pesapal'
+    
 ]
 
 SITE_ID = 1
