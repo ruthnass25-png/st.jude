@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: st.jude
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "python manage.py migrate && gunicorn charity_website.wsgi:application"
