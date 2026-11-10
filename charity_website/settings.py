@@ -21,12 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1s%dq6ok-4q!3&m@@a2r3m!lgo8c*30=6^84pr)l@4i)g#p=-2'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'temporary-local-development-key'
+)
 
 DEBUG = False
 
@@ -39,7 +37,6 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://st-jude-1.onrender.com',
 ]
-
 
 # Application definition
 
@@ -136,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # BASE_DIR is the root of your project directory
 ]
